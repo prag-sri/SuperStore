@@ -2,6 +2,7 @@ package com.example.SuperStore.Controller;
 
 import com.example.SuperStore.Model.Product;
 import com.example.SuperStore.RequestDTO.ProductRequestDTO;
+import com.example.SuperStore.RequestDTO.ProductResponseDTO;
 import com.example.SuperStore.Service.ProductService;
 import com.example.SuperStore.Service.ServiceImplementation.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,23 +34,23 @@ public class ProductController {
     }
 
     @GetMapping("/get_product_by_id")
-    public ResponseEntity<Product> getProductById(@RequestParam("id")int id)
+    public ResponseEntity<ProductResponseDTO> getProductById(@RequestParam("id")int id)
     {
-        Product product= productService.getProductById(id);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        ProductResponseDTO product= productService.getProductById(id);
+        return new ResponseEntity<>(product,HttpStatus.OK);
     }
 
     @GetMapping("/get_all_products")
-    public ResponseEntity<List<Product>> getAllProducts()
+    public ResponseEntity<List<ProductResponseDTO>> getAllProducts()
     {
-        List<Product> productList= productService.getAllProducts();
+        List<ProductResponseDTO> productList= productService.getAllProducts();
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
     @GetMapping("/get_all_products_by_aisle_id")
-    public ResponseEntity<List<Product>> getAllProductsByAisleId(@RequestParam("id")int aisleId)
+    public ResponseEntity<List<ProductResponseDTO>> getAllProductsByAisleId(@RequestParam("id")int aisleId)
     {
-        List<Product> productList= productService.getAllProductsByAisleId(aisleId);
+        List<ProductResponseDTO> productList= productService.getAllProductsByAisleId(aisleId);
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 }

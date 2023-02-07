@@ -6,11 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Product {
 
     @Id
@@ -29,6 +28,9 @@ public class Product {
     @ManyToOne
     @JoinColumn
     private Customer customer;
+
+    public Product() {
+    }
 
     public Product(String name, String manufacturer, double price, int quantity) {
         this.name = name;

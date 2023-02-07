@@ -2,6 +2,7 @@ package com.example.SuperStore.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +17,7 @@ public class Aisle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @Enumerated(value = EnumType.STRING)
     private AisleType aisleType;
 
     @OneToMany(mappedBy = "aisle",cascade = CascadeType.ALL)

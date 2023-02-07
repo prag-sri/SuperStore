@@ -23,12 +23,12 @@ public class Customer {
     private Date billDt;
     private double billAmount;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Product> boughtItemsList;
-
     @ManyToOne
     @JoinColumn
     private Employee employee;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Product> boughtItemsList= new ArrayList<>();
 
     public Customer() {
     }
@@ -38,7 +38,6 @@ public class Customer {
         this.mobile = mobile;
         this.billDt = billDt;
         this.billAmount = billAmount;
-        this.boughtItemsList= new ArrayList<>();
     }
 
     public int getId() {
@@ -81,19 +80,19 @@ public class Customer {
         this.billAmount = billAmount;
     }
 
-    public List<Product> getBoughtItemsList() {
-        return boughtItemsList;
-    }
-
-    public void setBoughtItemsList(List<Product> boughtItemsList) {
-        this.boughtItemsList = boughtItemsList;
-    }
-
     public Employee getEmployee() {
         return employee;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public List<Product> getBoughtItemsList() {
+        return boughtItemsList;
+    }
+
+    public void setBoughtItemsList(List<Product> boughtItemsList) {
+        this.boughtItemsList = boughtItemsList;
     }
 }

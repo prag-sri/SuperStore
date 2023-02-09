@@ -1,9 +1,8 @@
 package com.example.SuperStore.Service;
 
 import com.example.SuperStore.Model.Aisle;
-import com.example.SuperStore.RequestDTO.AisleRequestDTO;
-import com.example.SuperStore.RequestDTO.AisleResponseDTO;
-import org.springframework.stereotype.Service;
+import com.example.SuperStore.RequestResponseDTO.AisleRequestDTO;
+import com.example.SuperStore.RequestResponseDTO.AisleResponseDTO;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;

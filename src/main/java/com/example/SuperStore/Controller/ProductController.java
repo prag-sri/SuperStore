@@ -1,9 +1,7 @@
 package com.example.SuperStore.Controller;
 
-import com.example.SuperStore.Model.Product;
-import com.example.SuperStore.RequestDTO.ProductRequestDTO;
-import com.example.SuperStore.RequestDTO.ProductResponseDTO;
-import com.example.SuperStore.Service.ProductService;
+import com.example.SuperStore.RequestResponseDTO.ProductRequestDTO;
+import com.example.SuperStore.RequestResponseDTO.ProductResponseDTO;
 import com.example.SuperStore.Service.ServiceImplementation.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

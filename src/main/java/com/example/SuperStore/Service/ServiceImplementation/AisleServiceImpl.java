@@ -3,11 +3,9 @@ package com.example.SuperStore.Service.ServiceImplementation;
 import com.example.SuperStore.Model.Aisle;
 import com.example.SuperStore.Model.Product;
 import com.example.SuperStore.Repository.AisleRepository;
-import com.example.SuperStore.RequestDTO.AisleRequestDTO;
-import com.example.SuperStore.RequestDTO.AisleResponseDTO;
+import com.example.SuperStore.RequestResponseDTO.AisleRequestDTO;
+import com.example.SuperStore.RequestResponseDTO.AisleResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 

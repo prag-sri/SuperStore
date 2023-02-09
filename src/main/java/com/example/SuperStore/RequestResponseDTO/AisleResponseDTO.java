@@ -1,4 +1,4 @@
-package com.example.SuperStore.RequestDTO;
+package com.example.SuperStore.RequestResponseDTO;
 
 import com.example.SuperStore.Model.AisleType;
 

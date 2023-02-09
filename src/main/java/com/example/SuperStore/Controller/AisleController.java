@@ -1,9 +1,7 @@
 package com.example.SuperStore.Controller;
 
-import com.example.SuperStore.Model.Aisle;
-import com.example.SuperStore.RequestDTO.AisleRequestDTO;
-import com.example.SuperStore.RequestDTO.AisleResponseDTO;
-import com.example.SuperStore.RequestDTO.ProductResponseDTO;
+import com.example.SuperStore.RequestResponseDTO.AisleRequestDTO;
+import com.example.SuperStore.RequestResponseDTO.AisleResponseDTO;
 import com.example.SuperStore.Service.ServiceImplementation.AisleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

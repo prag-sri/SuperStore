@@ -36,8 +36,8 @@ public class Customer {
     public Customer(String name, String mobile, Date billDt, double billAmount) {
         this.name = name;
         this.mobile = mobile;
-        this.billDt = billDt;
-        this.billAmount = billAmount;
+        this.billDt = null;
+        this.billAmount = 0;
     }
 
     public int getId() {

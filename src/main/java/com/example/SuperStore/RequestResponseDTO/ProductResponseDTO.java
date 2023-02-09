@@ -1,22 +1,23 @@
-package com.example.SuperStore.RequestDTO;
+package com.example.SuperStore.RequestResponseDTO;
 
-public class ProductRequestDTO {
+public class ProductResponseDTO {
 
+    private int id;
     private String name;
     private String manufacturer;
     private double price;
     private int quantity;
     private int aisle_id;
 
-    public ProductRequestDTO() {
+    public ProductResponseDTO() {
     }
 
-    public ProductRequestDTO(String name, String manufacturer, double price, int quantity, int aisle_id) {
-        this.name = name;
-        this.manufacturer = manufacturer;
-        this.price = price;
-        this.quantity = quantity;
-        this.aisle_id= aisle_id;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

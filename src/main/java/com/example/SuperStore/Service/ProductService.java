@@ -1,8 +1,7 @@
 package com.example.SuperStore.Service;
 
-import com.example.SuperStore.Model.Product;
-import com.example.SuperStore.RequestDTO.ProductRequestDTO;
-import com.example.SuperStore.RequestDTO.ProductResponseDTO;
+import com.example.SuperStore.RequestResponseDTO.ProductRequestDTO;
+import com.example.SuperStore.RequestResponseDTO.ProductResponseDTO;
 
 import java.util.List;
 

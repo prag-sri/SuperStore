@@ -2,8 +2,10 @@ package com.example.SuperStore.Service.ServiceImplementation;
 
 import com.example.SuperStore.Model.Customer;
 import com.example.SuperStore.Model.Employee;
+import com.example.SuperStore.Model.Product;
 import com.example.SuperStore.Repository.CustomerRepository;
 import com.example.SuperStore.Repository.EmployeeRepository;
+import com.example.SuperStore.Repository.ProductRepository;
 import com.example.SuperStore.RequestResponseDTO.CustomerRequestDTO;
 import com.example.SuperStore.RequestResponseDTO.CustomerResponseDTO;
 import com.example.SuperStore.RequestResponseDTO.EmployeeResponseDTO;
@@ -28,6 +30,9 @@ public class CustomerServiceImpl {
 
     @Autowired
     EmployeeServiceImpl employeeService;
+
+    @Autowired
+    ProductRepository productRepository;
 
     public void registerCustomer(CustomerRequestDTO customerRequestDTO)
     {
@@ -83,5 +88,24 @@ public class CustomerServiceImpl {
             customerResponseDTOList.add(customerResponseDTO);
         }
         return customerResponseDTOList;
+    }
+
+    public void buyProduct(int custId, int productId, int employeeId)
+    {
+        Customer customer= customerRepository.findById(custId).get();
+        Product product= productRepository.findById(productId).get();
+        Employee employee= employeeRepository.findById(employeeId).get();
+
+        List<Product> productList= customer.getBoughtItemsList();
+        productList.add(product);
+        customer.setBoughtItemsList(productList);
+
+        customer.setEmployee(employee);
+
+        List<Customer> customerList= employee.getCustomerList();
+        customerList.add(customer);
+        employee.setCustomerList(customerList);
+
+        customerRepository.save(customer);
     }
 }

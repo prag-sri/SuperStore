@@ -1,5 +1,6 @@
 package com.example.SuperStore.Controller;
 
+import com.example.SuperStore.RequestResponseDTO.CustomerResponseDTO;
 import com.example.SuperStore.RequestResponseDTO.EmployeeRequestDTO;
 import com.example.SuperStore.RequestResponseDTO.EmployeeResponseDTO;
 import com.example.SuperStore.Service.ServiceImplementation.EmployeeServiceImpl;
@@ -36,5 +37,12 @@ public class EmployeeController {
     {
         List<EmployeeResponseDTO> employeeResponseDTOList= employeeService.getAllEmployees();
         return new ResponseEntity<>(employeeResponseDTOList, HttpStatus.OK);
+    }
+
+    @GetMapping("get_list_of_customers_by_employee")
+    public ResponseEntity<List<CustomerResponseDTO>> getListOfCustomersByEmployee(@RequestParam("id")int id)
+    {
+        List<CustomerResponseDTO> customerResponseDTOList= employeeService.getListOfCustomersByEmployee(id);
+        return new ResponseEntity<>(customerResponseDTOList,HttpStatus.ACCEPTED);
     }
 }

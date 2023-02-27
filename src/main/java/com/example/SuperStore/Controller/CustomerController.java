@@ -46,9 +46,9 @@ public class CustomerController {
     }
 
     @PutMapping("/buy_product")
-    public ResponseEntity<String> buyProduct()
+    public ResponseEntity<String> buyProduct(@RequestParam("custId")int custId, @RequestParam("productId")int productId, @RequestParam("employeeId")int employeeId)
     {
-        customerService.buyProduct();
+        customerService.buyProduct(custId,productId,employeeId);
         return new ResponseEntity<>("Customer bought the product!", HttpStatus.OK);
     }
 }

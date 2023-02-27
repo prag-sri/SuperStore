@@ -1,7 +1,9 @@
 package com.example.SuperStore.Service.ServiceImplementation;
 
+import com.example.SuperStore.Model.Customer;
 import com.example.SuperStore.Model.Employee;
 import com.example.SuperStore.Repository.EmployeeRepository;
+import com.example.SuperStore.RequestResponseDTO.CustomerResponseDTO;
 import com.example.SuperStore.RequestResponseDTO.EmployeeRequestDTO;
 import com.example.SuperStore.RequestResponseDTO.EmployeeResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class EmployeeServiceImpl {
 
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    CustomerServiceImpl customerService;
 
     public void createEmployee(EmployeeRequestDTO employeeRequestDTO)
     {
@@ -50,5 +55,18 @@ public class EmployeeServiceImpl {
             employeeResponseDTOList.add(employeeResponseDTO);
         }
         return employeeResponseDTOList;
+    }
+
+    public List<CustomerResponseDTO> getListOfCustomersByEmployee(int id)
+    {
+        Employee employee= employeeRepository.findById(id).get();
+        List<Customer> customerList= employee.getCustomerList();
+        List<CustomerResponseDTO> customerResponseDTOList= new ArrayList<>();
+        for(Customer c: customerList)
+        {
+            CustomerResponseDTO customerResponseDTO= customerService.getCustomerById(c.getId());
+            customerResponseDTOList.add(customerResponseDTO);
+        }
+        return customerResponseDTOList;
     }
 }

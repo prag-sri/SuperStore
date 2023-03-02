@@ -46,9 +46,14 @@ public class CustomerController {
     }
 
     @PutMapping("/buy_product")
-    public ResponseEntity<String> buyProduct(@RequestParam("custId")int custId, @RequestParam("productId")int productId, @RequestParam("employeeId")int employeeId)
-    {
-        customerService.buyProduct(custId,productId,employeeId);
+    public ResponseEntity<String> buyProduct(@RequestParam("custId")int custId, @RequestParam("productId")int productId, @RequestParam("employeeId")int employeeId, @RequestParam("quantity")int quantity) throws Exception {
+        customerService.buyProduct(custId,productId,employeeId,quantity);
         return new ResponseEntity<>("Customer bought the product!", HttpStatus.OK);
+    }
+
+    @PutMapping("/return_product")
+    public ResponseEntity<String> returnProduct(@RequestParam("custId")int custId, @RequestParam("productId")int productId, @RequestParam("quantity")int quantity){
+        customerService.returnProduct(custId,productId,quantity);
+        return new ResponseEntity<>("Customer returned the product!",HttpStatus.OK);
     }
 }

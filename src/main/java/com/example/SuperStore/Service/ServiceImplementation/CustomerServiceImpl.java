@@ -90,11 +90,19 @@ public class CustomerServiceImpl {
         return customerResponseDTOList;
     }
 
-    public void buyProduct(int custId, int productId, int employeeId)
-    {
+    public void buyProduct(int custId, int productId, int employeeId, int quantity) throws Exception {
         Customer customer= customerRepository.findById(custId).get();
         Product product= productRepository.findById(productId).get();
         Employee employee= employeeRepository.findById(employeeId).get();
+
+        int currentQuantity= product.getQuantity();
+        if(currentQuantity<quantity)
+            throw new Exception("Product out of Stock!");
+        int newQuantity= currentQuantity-quantity;
+
+        if(newQuantity==0)
+            product.setInStock(false);
+        product.setQuantity(newQuantity);
 
         List<Product> productList= customer.getBoughtItemsList();
         productList.add(product);
@@ -107,5 +115,32 @@ public class CustomerServiceImpl {
         employee.setCustomerList(customerList);
 
         customerRepository.save(customer);
+    }
+
+    public void returnProduct(int custId, int productId, int quantity){
+        Customer customer= customerRepository.findById(custId).get();
+        Product product= productRepository.findById(productId).get();
+
+        int currentQuantity= product.getQuantity();
+        if(currentQuantity==0)
+            product.setInStock(true);
+        int newQuantity= currentQuantity+quantity;
+        product.setQuantity(newQuantity);
+
+        List<Product> productList= customer.getReturnedItemsList();
+        productList.add(product);
+        customer.setReturnedItemsList(productList);
+
+        customerRepository.save(customer);
+    }
+
+    public double generateBill(int custId){
+        Customer customer= customerRepository.findById(custId).get();
+        List<Product> productList= customer.getBoughtItemsList();
+        double billAmount= 0;
+        for(Product p: productList)
+        {
+            billAmount+= p.getPrice()*
+        }
     }
 }

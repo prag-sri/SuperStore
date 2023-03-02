@@ -30,6 +30,9 @@ public class Customer {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Product> boughtItemsList= new ArrayList<>();
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Product> returnedItemsList= new ArrayList<>();
+
     public Customer() {
     }
 
@@ -94,5 +97,13 @@ public class Customer {
 
     public void setBoughtItemsList(List<Product> boughtItemsList) {
         this.boughtItemsList = boughtItemsList;
+    }
+
+    public List<Product> getReturnedItemsList() {
+        return returnedItemsList;
+    }
+
+    public void setReturnedItemsList(List<Product> returnedItemsList) {
+        this.returnedItemsList = returnedItemsList;
     }
 }

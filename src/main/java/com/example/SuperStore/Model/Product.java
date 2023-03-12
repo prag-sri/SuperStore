@@ -1,12 +1,6 @@
 package com.example.SuperStore.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Entity
 @Table
@@ -25,9 +19,9 @@ public class Product {
     @JoinColumn
     private Aisle aisle;
 
-    @ManyToOne
-    @JoinColumn
-    private Customer customer;
+//    @ManyToOne
+//    @JoinColumn
+//    private Customer customer;
 
     public Product() {
     }
@@ -96,11 +90,11 @@ public class Product {
         this.aisle = aisle;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+//    public Customer getCustomer() {
+//        return customer;
+//    }
+//
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
 }

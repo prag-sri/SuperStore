@@ -14,5 +14,5 @@ public interface EmployeeService {
 
     public List<EmployeeResponseDTO> getAllEmployees();
 
-    public List<CustomerResponseDTO> getListOfCustomersByEmployee(int id);
+//    public List<CustomerResponseDTO> getListOfCustomersByEmployee(int id);
 }

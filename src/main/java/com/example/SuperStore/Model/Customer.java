@@ -19,19 +19,19 @@ public class Customer {
     private int id;
     private String name;
     private String mobile;
-    @UpdateTimestamp
-    private Date billDt;
-    private double billAmount;
+//    @UpdateTimestamp
+//    private Date billDt;
+//    private double billAmount;
 
-    @ManyToOne
-    @JoinColumn
-    private Employee employee;
-
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Product> boughtItemsList= new ArrayList<>();
-
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Product> returnedItemsList= new ArrayList<>();
+//    @ManyToOne
+//    @JoinColumn
+//    private Employee employee;
+//
+//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+//    private List<Product> boughtItemsList= new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+//    private List<Product> returnedItemsList= new ArrayList<>();
 
     public Customer() {
     }
@@ -39,8 +39,8 @@ public class Customer {
     public Customer(String name, String mobile, Date billDt, double billAmount) {
         this.name = name;
         this.mobile = mobile;
-        this.billDt = null;
-        this.billAmount = 0;
+//        this.billDt = null;
+//        this.billAmount = 0;
     }
 
     public int getId() {
@@ -67,43 +67,43 @@ public class Customer {
         this.mobile = mobile;
     }
 
-    public Date getBillDt() {
-        return billDt;
-    }
-
-    public void setBillDt(Date billDt) {
-        this.billDt = billDt;
-    }
-
-    public double getBillAmount() {
-        return billAmount;
-    }
-
-    public void setBillAmount(double billAmount) {
-        this.billAmount = billAmount;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public List<Product> getBoughtItemsList() {
-        return boughtItemsList;
-    }
-
-    public void setBoughtItemsList(List<Product> boughtItemsList) {
-        this.boughtItemsList = boughtItemsList;
-    }
-
-    public List<Product> getReturnedItemsList() {
-        return returnedItemsList;
-    }
-
-    public void setReturnedItemsList(List<Product> returnedItemsList) {
-        this.returnedItemsList = returnedItemsList;
-    }
+//    public Date getBillDt() {
+//        return billDt;
+//    }
+//
+//    public void setBillDt(Date billDt) {
+//        this.billDt = billDt;
+//    }
+//
+//    public double getBillAmount() {
+//        return billAmount;
+//    }
+//
+//    public void setBillAmount(double billAmount) {
+//        this.billAmount = billAmount;
+//    }
+//
+//    public Employee getEmployee() {
+//        return employee;
+//    }
+//
+//    public void setEmployee(Employee employee) {
+//        this.employee = employee;
+//    }
+//
+//    public List<Product> getBoughtItemsList() {
+//        return boughtItemsList;
+//    }
+//
+//    public void setBoughtItemsList(List<Product> boughtItemsList) {
+//        this.boughtItemsList = boughtItemsList;
+//    }
+//
+//    public List<Product> getReturnedItemsList() {
+//        return returnedItemsList;
+//    }
+//
+//    public void setReturnedItemsList(List<Product> returnedItemsList) {
+//        this.returnedItemsList = returnedItemsList;
+//    }
 }

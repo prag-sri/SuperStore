@@ -1,8 +1,6 @@
 package com.example.SuperStore.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
@@ -12,20 +10,29 @@ import java.util.Date;
 public class Transaction {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int productId;
+    private int quantity;
     private int custId;
     private int empId;
-    private boolean bought;         //signifies whether item is bought or returned
-    private int billAmount;
+    @Enumerated(value = EnumType.STRING)
+    private BuyReturn buyReturn;         //signifies whether item is bought or returned
+    private boolean txnPaid;        //checks if the txn has been cashed or not- for custs buying/returning on diff dates
     @UpdateTimestamp
-    private Date billDt;
+    private Date purchaseDt;
 
-    public Transaction(int productId, int custId, int empId, boolean bought) {
+    public Transaction() {
+    }
+
+    public Transaction(int productId, int quantity, int custId, int empId, BuyReturn buyReturn, boolean txnPaid) {
         this.productId = productId;
+        this.quantity= quantity;
         this.custId = custId;
         this.empId = empId;
-        this.bought = bought;
+        this.buyReturn = buyReturn;
+        this.txnPaid= false;
+        this.purchaseDt= new Date();
     }
 
     public int getId() {
@@ -44,6 +51,14 @@ public class Transaction {
         this.productId = productId;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public int getCustId() {
         return custId;
     }
@@ -60,27 +75,27 @@ public class Transaction {
         this.empId = empId;
     }
 
-    public boolean isBought() {
-        return bought;
+    public BuyReturn getBuyReturn() {
+        return buyReturn;
     }
 
-    public void setBought(boolean bought) {
-        this.bought = bought;
+    public void setBuyReturn(BuyReturn buyReturn) {
+        this.buyReturn = buyReturn;
     }
 
-    public int getBillAmount() {
-        return billAmount;
+    public boolean isTxnPaid() {
+        return txnPaid;
     }
 
-    public void setBillAmount(int billAmount) {
-        this.billAmount = billAmount;
+    public void setTxnPaid(boolean txnPaid) {
+        this.txnPaid = txnPaid;
     }
 
-    public Date getBillDt() {
-        return billDt;
+    public Date getpurchaseDt() {
+        return purchaseDt;
     }
 
-    public void setBillDt(Date billDt) {
-        this.billDt = billDt;
+    public void setpurchaseDt(Date purchaseDt) {
+        this.purchaseDt = purchaseDt;
     }
 }

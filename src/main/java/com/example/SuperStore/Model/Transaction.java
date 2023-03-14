@@ -1,6 +1,6 @@
 package com.example.SuperStore.Model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;

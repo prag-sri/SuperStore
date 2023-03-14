@@ -9,10 +9,6 @@ public class CustomerResponseDTO {
     private int id;
     private String name;
     private String mobile;
-//    @UpdateTimestamp
-//    private Date billDt;
-//    private double billAmount;
-//    private EmployeeResponseDTO employeeResponseDTO;
 
     public int getId() {
         return id;
@@ -37,28 +33,4 @@ public class CustomerResponseDTO {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
-
-//    public Date getBillDt() {
-//        return billDt;
-//    }
-//
-//    public void setBillDt(Date billDt) {
-//        this.billDt = billDt;
-//    }
-//
-//    public double getBillAmount() {
-//        return billAmount;
-//    }
-//
-//    public void setBillAmount(double billAmount) {
-//        this.billAmount = billAmount;
-//    }
-//
-//    public EmployeeResponseDTO getEmployeeResponseDTO() {
-//        return employeeResponseDTO;
-//    }
-//
-//    public void setEmployeeResponseDTO(EmployeeResponseDTO employeeResponseDTO) {
-//        this.employeeResponseDTO = employeeResponseDTO;
-//    }
 }

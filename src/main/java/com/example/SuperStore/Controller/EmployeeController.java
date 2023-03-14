@@ -39,10 +39,4 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeResponseDTOList, HttpStatus.OK);
     }
 
-//    @GetMapping("get_list_of_customers_by_employee")
-//    public ResponseEntity<List<CustomerResponseDTO>> getListOfCustomersByEmployee(@RequestParam("id")int id)
-//    {
-//        List<CustomerResponseDTO> customerResponseDTOList= employeeService.getListOfCustomersByEmployee(id);
-//        return new ResponseEntity<>(customerResponseDTOList,HttpStatus.ACCEPTED);
-//    }
 }

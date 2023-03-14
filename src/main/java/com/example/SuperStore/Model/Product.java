@@ -19,10 +19,6 @@ public class Product {
     @JoinColumn
     private Aisle aisle;
 
-//    @ManyToOne
-//    @JoinColumn
-//    private Customer customer;
-
     public Product() {
     }
 
@@ -90,11 +86,4 @@ public class Product {
         this.aisle = aisle;
     }
 
-//    public Customer getCustomer() {
-//        return customer;
-//    }
-//
-//    public void setCustomer(Customer customer) {
-//        this.customer = customer;
-//    }
 }

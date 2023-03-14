@@ -18,16 +18,12 @@ public class Employee {
     private String name;
     private String mobileNo;
 
-//    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
-//    private List<Customer> customerList;
-
     public Employee() {
     }
 
     public Employee(String name, String mobileNo) {
         this.name = name;
         this.mobileNo = mobileNo;
-//        this.customerList= new ArrayList<>();
     }
 
     public int getId() {
@@ -54,11 +50,4 @@ public class Employee {
         this.mobileNo = mobileNo;
     }
 
-//    public List<Customer> getCustomerList() {
-//        return customerList;
-//    }
-//
-//    public void setCustomerList(List<Customer> customerList) {
-//        this.customerList = customerList;
-//    }
 }

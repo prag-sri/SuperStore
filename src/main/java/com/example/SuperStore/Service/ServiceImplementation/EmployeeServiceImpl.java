@@ -53,17 +53,4 @@ public class EmployeeServiceImpl {
         }
         return employeeResponseDTOList;
     }
-
-//    public List<CustomerResponseDTO> getListOfCustomersByEmployee(int id)
-//    {
-//        Employee employee= employeeRepository.findById(id).get();
-//        List<Customer> customerList= employee.getCustomerList();
-//        List<CustomerResponseDTO> customerResponseDTOList= new ArrayList<>();
-//        for(Customer c: customerList)
-//        {
-//            CustomerResponseDTO customerResponseDTO= customerService.getCustomerById(c.getId());
-//            customerResponseDTOList.add(customerResponseDTO);
-//        }
-//        return customerResponseDTOList;
-//    }
 }

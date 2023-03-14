@@ -37,7 +37,7 @@ public class CustomerServiceImpl {
     public void registerCustomer(CustomerRequestDTO customerRequestDTO)
     {
         Customer customer= new Customer();
-        Employee employee= employeeRepository.findById(customerRequestDTO.getEmployeeId()).get();
+//        Employee employee= employeeRepository.findById(customerRequestDTO.getEmployeeId()).get();
         customer.setName(customerRequestDTO.getName());
         customer.setMobile(customerRequestDTO.getMobile());
 //        customer.setEmployee(employee);

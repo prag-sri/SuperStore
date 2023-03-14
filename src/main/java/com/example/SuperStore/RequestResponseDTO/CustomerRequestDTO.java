@@ -8,7 +8,7 @@ public class CustomerRequestDTO {
 
     private String name;
     private String mobile;
-    private int employeeId;
+//    private int employeeId;
 
     public String getName() {
         return name;
@@ -26,11 +26,11 @@ public class CustomerRequestDTO {
         this.mobile = mobile;
     }
 
-    public int getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
+//    public int getEmployeeId() {
+//        return employeeId;
+//    }
+//
+//    public void setEmployeeId(int employeeId) {
+//        this.employeeId = employeeId;
+//    }
 }

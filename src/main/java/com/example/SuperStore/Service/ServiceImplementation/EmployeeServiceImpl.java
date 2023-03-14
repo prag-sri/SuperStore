@@ -21,9 +21,6 @@ public class EmployeeServiceImpl {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @Autowired
-    CustomerServiceImpl customerService;
-
     public void createEmployee(EmployeeRequestDTO employeeRequestDTO)
     {
         Employee employee= new Employee();

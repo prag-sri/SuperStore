@@ -51,7 +51,7 @@ public class TransactionController {
         return new ResponseEntity<>(txnProductResponseDTOList,HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("get_list_of_products_bought_by_customer")
+    @GetMapping("get_list_of_products_returned_by_customer")
     public ResponseEntity<List<TxnProductResponseDTO>> getListOfProductsReturnedByCustomer(@RequestParam("id")int id)
     {
         List<TxnProductResponseDTO> txnProductResponseDTOList= transactionService.getListOfProductsReturnedByCustomer(id);

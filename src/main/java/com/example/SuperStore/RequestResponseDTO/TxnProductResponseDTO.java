@@ -1,5 +1,7 @@
 package com.example.SuperStore.RequestResponseDTO;;
 
+import com.example.SuperStore.Model.BuyReturn;
+
 import java.util.Date;
 
 public class TxnProductResponseDTO {
@@ -8,7 +10,7 @@ public class TxnProductResponseDTO {
     private int quantity;
     private int custId;
     private int empId;
-    private String buyReturn;
+    private BuyReturn buyReturn;
     private Date purchaseDt;
 
     public int getProductId() {
@@ -43,11 +45,11 @@ public class TxnProductResponseDTO {
         this.empId = empId;
     }
 
-    public String getBuyReturn() {
+    public BuyReturn getBuyReturn() {
         return buyReturn;
     }
 
-    public void setBuyReturn(String buyReturn) {
+    public void setBuyReturn(BuyReturn buyReturn) {
         this.buyReturn = buyReturn;
     }
 
